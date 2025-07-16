@@ -565,7 +565,7 @@
                 retirementPeriodBar.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
             }
             const totalNonProductiveYears = Math.round(otherWorkYears + retirementDuration);
-            workPeriodExplanation.textContent = `💡 重要觀察：你的實際工作期 (${Math.round(actualWorkYears)} 年) 需要養活工作期內的其他時間 (${Math.round(otherWorkYears)} 年) 以及退休期 (${Math.round(retirementDuration)} 年)，總共約 ${totalNonProductiveYears} 年。`;
+           workPeriodExplanation.innerHTML = `💡 重要觀察：你的實際工作期 <span class="font-bold text-red-600">(${Math.round(actualWorkYears)} 年)</span> 需要養活工作期內的其他時間 <span class="font-bold">(${Math.round(otherWorkYears)} 年)</span> 以及退休期 <span class="font-bold">(${Math.round(retirementDuration)} 年)</span>，總共約 <span class="font-bold">${totalNonProductiveYears} 年</span>。`;
         }
 
         submitNameBtn.addEventListener('click', () => {
