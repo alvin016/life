@@ -7,20 +7,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
-        
+
         .container-main {
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.95);
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
-        
+
         .age-scale-container {
             position: relative;
             height: 140px;
@@ -28,7 +28,7 @@
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             border: 2px solid rgba(148, 163, 184, 0.3);
         }
-        
+
         .tick {
             position: absolute;
             bottom: 0;
@@ -38,7 +38,7 @@
             transition: all 0.3s ease;
             border-radius: 2px 2px 0 0;
         }
-        
+
         .tick-label {
             position: absolute;
             bottom: 35px;
@@ -48,26 +48,26 @@
             transform: translateX(-50%);
             pointer-events: none;
         }
-        
+
         .highlight-tick {
             background: linear-gradient(to top, #ef4444, #f87171) !important;
             height: 40px !important;
             width: 5px !important;
             box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
         }
-        
+
         .major-tick {
             background: linear-gradient(to top, #3b82f6, #60a5fa) !important;
             height: 25px !important;
             width: 4px !important;
         }
-        
+
         .minor-tick {
             background: linear-gradient(to top, #9ca3af, #d1d5db) !important;
             height: 15px !important;
             width: 3px !important;
         }
-        
+
         .time-period-bar {
             height: 50px;
             border-radius: 25px;
@@ -82,7 +82,7 @@
             transition: all 0.3s ease;
             position: relative;
         }
-        
+
         .time-period-bar::before {
             content: '';
             position: absolute;
@@ -93,97 +93,97 @@
             background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
             border-radius: inherit;
         }
-        
+
         .time-period-bar span {
             position: relative;
             z-index: 1;
         }
-        
+
         .retirement-period {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
         }
-        
+
         .productive-work-period {
             background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
             box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
         }
-        
+
         .non-productive-work-period {
             background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
             box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
         }
-        
+
         .highlight-border {
             border: 3px solid #f97316;
             box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
         }
-        
+
         .btn-primary {
             background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
         }
-        
+
         .btn-secondary {
             background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(107, 114, 128, 0.3);
         }
-        
+
         .btn-secondary:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(107, 114, 128, 0.4);
         }
-        
+
         .btn-success {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
         }
-        
+
         .btn-success:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
         }
-        
+
         .btn-danger {
             background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
         }
-        
+
         .btn-danger:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
         }
-        
+
         .input-field {
             transition: all 0.3s ease;
             border: 2px solid rgba(148, 163, 184, 0.3);
             background: rgba(255, 255, 255, 0.9);
         }
-        
+
         .input-field:focus {
             border-color: #3b82f6;
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
             background: rgba(255, 255, 255, 1);
         }
-        
+
         .page-transition {
             animation: fadeIn 0.5s ease-in-out;
         }
-        
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         .legend-item {
             display: flex;
             align-items: center;
@@ -193,7 +193,7 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .progress-container {
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid rgba(255, 255, 255, 0.2);
@@ -202,14 +202,14 @@
             padding: 4px;
             box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .title-gradient {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .stat-card {
             background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
             backdrop-filter: blur(10px);
@@ -218,567 +218,413 @@
             padding: 24px;
             transition: all 0.3s ease;
         }
-        
+
         .stat-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
+
+        /* 打印樣式保持不變 */
         @media print {
-    /* 隱藏不想列印/儲存為 PDF 的元素 */
-    body > *:not(#app) {
-        display: none; /* 隱藏 body 下除了 #app 之外的所有直接子元素 */
-    }
+            body > *:not(#app) { display: none; }
+            #app {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 20px !important;
+                box-shadow: none !important;
+                border: none !important;
+                backdrop-filter: none !important;
+                background: white !important;
+            }
+            button, .input-field, .age-scale-container { display: none !important; }
+            h1, h2, p, span.title-gradient, .text-gray-600, .text-gray-700, .text-gray-800 {
+                color: black !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .retirement-period, .productive-work-period, .non-productive-work-period {
+                filter: brightness(0.8) grayscale(0.5);
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+        @media (max-width: 640px) {
+  .progress-container {
+    flex-direction: column;
+    height: auto;
+  }
 
-    /* 調整主要內容的寬度，使其在列印時更適合紙張 */
-    #app {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 20px !important; /* 增加內邊距以避免內容貼邊 */
-        box-shadow: none !important; /* 列印時移除陰影 */
-        border: none !important; /* 列印時移除邊框 */
-        backdrop-filter: none !important; /* 列印時移除模糊效果 */
-        background: white !important; /* 確保背景是白色，以便列印 */
-    }
+  #workPeriodContainer,
+  #retirementPeriodBar {
+    width: 100% !important;
+    height: 48px;
+    margin-bottom: 8px;
+  }
 
-    /* 隱藏所有按鈕 */
-    button {
-        display: none !important;
-    }
+  .time-period-bar {
+    font-size: 0.9rem;
+    border-radius: 12px;
+  }
 
-    /* 隱藏輸入框和刻度尺，因為這些是互動元素，列印時不需要 */
-    .input-field, .age-scale-container {
-        display: none !important;
-    }
-
-    /* 確保文字顏色在列印時是黑色，以防背景圖案影響 */
-    h1, h2, p, span.title-gradient, .text-gray-600, .text-gray-700, .text-gray-800 {
-        color: black !important;
-        -webkit-print-color-adjust: exact; /* 確保顏色精確列印 */
-        print-color-adjust: exact;
-    }
-
-    /* 調整條狀圖的顏色，使其在黑白列印時也能清晰可見 */
-    .retirement-period, .productive-work-period, .non-productive-work-period {
-        filter: brightness(0.8) grayscale(0.5); /* 降低亮度並灰度化，增加對比 */
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-
-    /* 圖例可以保留，但調整顏色確保可見 */
-    .legend-item span {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
+  .legend-item {
+    width: 100%;
+    justify-content: center;
+  }
 }
+
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4">
-    <div id="app" class="container-main p-12 rounded-3xl w-full max-w-4xl min-h-[600px]">
+<body class="min-h-screen flex items-center justify-center p-3 md:p-4">
+    <div id="app" class="container-main w-full max-w-4xl min-h-[600px] p-6 md:p-10 lg:p-12 rounded-3xl">
         <!-- 第一頁: 姓名輸入 -->
-        <div id="namePage" class="page-transition flex flex-col items-center justify-center space-y-10 h-full">
-            <div class="text-center space-y-6">
-                <h1 class="text-6xl font-bold title-gradient mb-4">人生規劃工具</h1>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">探索你的人生時間分配，了解工作期與退休期的平衡</p>
+        <div id="namePage" class="page-transition flex flex-col items-center justify-center space-y-8 md:space-y-10 h-full">
+            <div class="text-center space-y-4 md:space-y-6 px-4">
+                <h1 class="font-bold title-gradient text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-2 md:mb-4">人生規劃工具</h1>
+                <p class="text-gray-600 mx-auto text-base sm:text-lg md:text-xl max-w-2xl">探索你的人生時間分配，了解工作期與退休期的平衡</p>
             </div>
-            
-            <div class="w-full max-w-md space-y-6">
+            <div class="w-full max-w-md space-y-4 md:space-y-6 px-4">
                 <div class="text-center">
-                    <label class="text-2xl font-semibold text-gray-700 block mb-4">請輸入你的姓名</label>
-                    <input type="text" id="nameInput" placeholder="你的姓名"
-                           class="input-field w-full p-6 rounded-2xl text-xl font-medium text-center">
+                    <label class="block mb-3 md:mb-4 text-lg sm:text-xl md:text-2xl font-semibold text-gray-700">請輸入你的姓名</label>
+                    <input type="text" id="nameInput" placeholder="你的姓名" class="input-field w-full p-4 md:p-6 rounded-2xl text-lg sm:text-xl md:text-2xl font-medium text-center">
                 </div>
-                <button id="submitNameBtn"
-                        class="btn-primary w-full text-white py-6 rounded-2xl text-xl font-semibold">
-                    開始規劃 →
-                </button>
+                <button id="submitNameBtn" class="btn-primary w-full text-white py-4 md:py-6 rounded-2xl text-lg sm:text-xl md:text-2xl font-semibold">開始規劃 →</button>
             </div>
         </div>
 
         <!-- 第二頁: 年齡刻度顯示 -->
-        <div id="agePage" class="page-transition hidden flex-col items-center justify-center space-y-10 h-full">
-            <div class="text-center space-y-4">
-                <h1 class="text-5xl font-bold text-gray-800">
-                    你好，<span id="displayNameAgePage" class="title-gradient"></span>！
-                </h1>
-                <p class="text-2xl text-gray-600">請選擇你的目前年齡</p>
+        <div id="agePage" class="page-transition hidden flex-col items-center justify-center space-y-8 md:space-y-10 h-full px-4">
+            <div class="text-center space-y-3 md:space-y-4">
+                <h1 class="font-bold text-gray-800 text-3xl sm:text-4xl md:text-5xl">你好，<span id="displayNameAgePage" class="title-gradient"></span>！</h1>
+                <p class="text-gray-600 text-lg sm:text-xl md:text-2xl">請選擇你的目前年齡</p>
             </div>
-            
             <div class="w-full max-w-md">
-                <input type="number" id="ageInput" min="0" max="100" value="0"
-                       class="input-field w-full p-6 rounded-2xl text-center text-4xl font-bold">
+                <input type="number" id="ageInput" min="0" max="100" value="0" class="input-field w-full p-4 md:p-6 rounded-2xl text-3xl sm:text-4xl font-bold text-center">
             </div>
-
-            <div id="ageScaleContainer" class="age-scale-container w-full rounded-2xl">
-                <!-- 年齡刻度將由 JavaScript 動態渲染到這裡 -->
-            </div>
-
-            <div class="flex justify-between w-full max-w-2xl space-x-6">
-                <button id="backToNameBtn"
-                        class="btn-secondary flex-1 text-white py-4 px-8 rounded-2xl text-lg font-semibold">
-                    ← 上一步
-                </button>
-                <button id="goToRetirementBtn"
-                        class="btn-primary flex-1 text-white py-4 px-8 rounded-2xl text-lg font-semibold">
-                    下一步 →
-                </button>
+            <div id="ageScaleContainer" class="age-scale-container w-full rounded-2xl h-32 sm:h-36"></div>
+            <div class="flex flex-col sm:flex-row justify-between w-full max-w-2xl space-y-4 sm:space-y-0 sm:space-x-6">
+                <button id="backToNameBtn" class="btn-secondary flex-1 text-white py-3 md:py-4 rounded-2xl text-base sm:text-lg font-semibold">← 上一步</button>
+                <button id="goToRetirementBtn" class="btn-primary flex-1 text-white py-3 md:py-4 rounded-2xl text-base sm:text-lg font-semibold">下一步 →</button>
             </div>
         </div>
 
         <!-- 第三頁: 退休年齡輸入 -->
-        <div id="retirementAgePage" class="page-transition hidden flex-col items-center justify-center space-y-10 h-full">
-            <div class="text-center space-y-4">
-                <h1 class="text-5xl font-bold text-gray-800">
-                    <span id="displayNameRetirementPage" class="title-gradient"></span>
-                </h1>
-                <p class="text-2xl text-gray-600">你計劃幾歲退休？</p>
+        <div id="retirementAgePage" class="page-transition hidden flex-col items-center justify-center space-y-8 md:space-y-10 h-full px-4">
+            <div class="text-center space-y-3 md:space-y-4">
+                <h1 class="font-bold text-gray-800 text-3xl sm:text-4xl md:text-5xl"><span id="displayNameRetirementPage" class="title-gradient"></span></h1>
+                <p class="text-gray-600 text-lg sm:text-xl md:text-2xl">你計劃幾歲退休？</p>
             </div>
-            
             <div class="w-full max-w-md">
-                <input type="number" id="retirementAgeInput" min="0" max="100" value="65"
-                       class="input-field w-full p-6 rounded-2xl text-center text-4xl font-bold">
+                <input type="number" id="retirementAgeInput" min="0" max="100" value="65" class="input-field w-full p-4 md:p-6 rounded-2xl text-3xl sm:text-4xl font-bold text-center">
             </div>
-
-            <div class="flex justify-between w-full max-w-2xl space-x-6">
-                <button id="backToAgeBtn"
-                        class="btn-secondary flex-1 text-white py-4 px-8 rounded-2xl text-lg font-semibold">
-                    ← 上一步
-                </button>
-                <button id="goToLifespanBtn"
-                        class="btn-primary flex-1 text-white py-4 px-8 rounded-2xl text-lg font-semibold">
-                    下一步 →
-                </button>
+            <div class="flex flex-col sm:flex-row justify-between w-full max-w-2xl space-y-4 sm:space-y-0 sm:space-x-6">
+                <button id="backToAgeBtn" class="btn-secondary flex-1 text-white py-3 md:py-4 rounded-2xl text-base sm:text-lg font-semibold">← 上一步</button>
+                <button id="goToLifespanBtn" class="btn-primary flex-1 text-white py-3 md:py-4 rounded-2xl text-base sm:text-lg font-semibold">下一步 →</button>
             </div>
         </div>
 
         <!-- 第四頁: 預計壽命輸入 -->
-        <div id="lifespanPage" class="page-transition hidden flex-col items-center justify-center space-y-10 h-full">
-            <div class="text-center space-y-4">
-                <h1 class="text-5xl font-bold text-gray-800">
-                    <span id="displayNameLifespanPage" class="title-gradient"></span>
-                </h1>
-                <p class="text-2xl text-gray-600">你預計能活到幾歲？</p>
+        <div id="lifespanPage" class="page-transition hidden flex-col items-center justify-center space-y-8 md:space-y-10 h-full px-4">
+            <div class="text-center space-y-3 md:space-y-4">
+                <h1 class="font-bold text-gray-800 text-3xl sm:text-4xl md:text-5xl"><span id="displayNameLifespanPage" class="title-gradient"></span></h1>
+                <p class="text-gray-600 text-lg sm:text-xl md:text-2xl">你預計能活到幾歲？</p>
             </div>
-            
             <div class="w-full max-w-md">
-                <input type="number" id="lifespanInput" min="0" max="120" value="80"
-                       class="input-field w-full p-6 rounded-2xl text-center text-4xl font-bold">
+                <input type="number" id="lifespanInput" min="0" max="120" value="80" class="input-field w-full p-4 md:p-6 rounded-2xl text-3xl sm:text-4xl font-bold text-center">
             </div>
-
-            <div class="flex justify-between w-full max-w-2xl space-x-6">
-                <button id="backToRetirementBtn"
-                        class="btn-secondary flex-1 text-white py-4 px-8 rounded-2xl text-lg font-semibold">
-                    ← 上一步
-                </button>
-                <button id="goToSummaryBtn"
-                        class="btn-success flex-1 text-white py-4 px-8 rounded-2xl text-lg font-semibold">
-                    查看結果 →
-                </button>
+            <div class="flex flex-col sm:flex-row justify-between w-full max-w-2xl space-y-4 sm:space-y-0 sm:space-x-6">
+                <button id="backToRetirementBtn" class="btn-secondary flex-1 text-white py-3 md:py-4 rounded-2xl text-base sm:text-lg font-semibold">← 上一步</button>
+                <button id="goToSummaryBtn" class="btn-success flex-1 text-white py-3 md:py-4 rounded-2xl text-base sm:text-lg font-semibold">查看結果 →</button>
             </div>
         </div>
 
-        <!-- 第五頁: 總結與時段顯示 -->
-        <div id="summaryPage" class="page-transition hidden flex-col space-y-10 h-full">
-            <div class="text-center space-y-4">
-                <h1 class="text-5xl font-bold text-gray-800">
-                    <span id="displayNameSummaryPage" class="title-gradient"></span> 的人生時間分配
-                </h1>
-                <p class="text-xl text-gray-600">以下是你的人生規劃分析</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-                <div class="stat-card text-center">
-                    <div class="text-3xl font-bold text-blue-600 mb-2">
-                        <span id="summaryCurrentAge"></span> 歲
-                    </div>
-                    <div class="text-lg text-gray-600">目前年齡</div>
-                </div>
-                <div class="stat-card text-center">
-                    <div class="text-3xl font-bold text-green-600 mb-2">
-                        <span id="summaryRetirementAge"></span> 歲
-                    </div>
-                    <div class="text-lg text-gray-600">退休年齡</div>
-                </div>
-                <div class="stat-card text-center">
-                    <div class="text-3xl font-bold text-purple-600 mb-2">
-                        <span id="summaryLifespan"></span> 歲
-                    </div>
-                    <div class="text-lg text-gray-600">預計壽命</div>
-                </div>
-            </div>
+       <!-- 第五頁: 總結與時段顯示 -->
+<div id="summaryPage" class="page-transition hidden flex-col space-y-8 md:space-y-10 h-full px-4">
+    <div class="text-center space-y-3 md:space-y-4">
+        <h1 class="font-bold text-gray-800 text-3xl sm:text-4xl md:text-5xl">
+            <span id="displayNameSummaryPage" class="title-gradient"></span> 的人生時間分配
+        </h1>
+        <p class="text-gray-600 text-base sm:text-lg md:text-xl">以下是你的人生規劃分析</p>
+    </div>
 
-            <div class="w-full space-y-6">
-                <h2 class="text-2xl font-bold text-gray-800 text-center">人生時間分配圖</h2>
-                <div class="progress-container w-full h-16 flex overflow-hidden">
-                    <div id="workPeriodContainer" class="flex h-full rounded-2xl overflow-hidden">
-                        <div id="actualWorkBar" class="time-period-bar productive-work-period justify-center px-4">
-                            <span id="actualWorkLabel"></span>
-                        </div>
-                        <div id="otherWorkBar" class="time-period-bar non-productive-work-period justify-center px-4">
-                            <span id="otherWorkLabel"></span>
-                        </div>
-                    </div>
-                    <div id="retirementPeriodBar" class="time-period-bar retirement-period justify-center px-4">
-                        <span id="retirementPeriodLabel"></span>
-                    </div>
-                </div>
-                
-                <div class="flex flex-wrap justify-center gap-4">
-                    <div class="legend-item">
-                        <span class="w-5 h-5 rounded-full bg-gradient-to-r from-red-600 to-red-500 mr-3"></span>
-                        <span class="text-white font-medium">實際工作期</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="w-5 h-5 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 mr-3"></span>
-                        <span class="text-white font-medium">工作期內其他時間</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="w-5 h-5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-400 mr-3"></span>
-                        <span class="text-white font-medium">退休期</span>
-                    </div>
-                </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 w-full">
+        <div class="stat-card text-center">
+            <div class="text-blue-600 font-bold text-2xl sm:text-3xl mb-1 md:mb-2">
+                <span id="summaryCurrentAge"></span> 歲
             </div>
-            
-            <div class="stat-card">
-                <p id="workPeriodExplanation" class="text-lg text-gray-700 text-center leading-relaxed">
-                    <!-- 這裡將顯示實際工作期需要養活其他時段的說明 -->
-                </p>
+            <div class="text-gray-600 text-sm sm:text-base">目前年齡</div>
+        </div>
+        <div class="stat-card text-center">
+            <div class="text-green-600 font-bold text-2xl sm:text-3xl mb-1 md:mb-2">
+                <span id="summaryRetirementAge"></span> 歲
             </div>
-
-            <div class="flex justify-between w-full max-w-2xl mx-auto space-x-6">
-    <button id="backToLifespanBtn"
-            class="btn-secondary flex-1 text-white py-4 px-8 rounded-2xl text-lg font-semibold">
-        ← 上一步
-    </button>
-    <button id="savePdfBtn"
-            class="btn-primary flex-1 text-white py-4 px-8 rounded-2xl text-lg font-semibold">
-        儲存為 PDF 📄
-    </button>
-    <button id="startOverBtn"
-            class="btn-danger flex-1 text-white py-4 px-8 rounded-2xl text-lg font-semibold">
-        重新開始
-    </button>
-</div>
+            <div class="text-gray-600 text-sm sm:text-base">退休年齡</div>
+        </div>
+        <div class="stat-card text-center">
+            <div class="text-purple-600 font-bold text-2xl sm:text-3xl mb-1 md:mb-2">
+                <span id="summaryLifespan"></span> 歲
+            </div>
+            <div class="text-gray-600 text-sm sm:text-base">預計壽命</div>
         </div>
     </div>
+
+    <div class="w-full space-y-4 md:space-y-6">
+        <h2 class="text-gray-800 font-bold text-xl sm:text-2xl md:text-3xl text-center">人生時間分配圖</h2>
+        <div class="progress-container w-full flex flex-col sm:flex-row overflow-hidden space-y-2 sm:space-y-0 sm:h-16">
+            <div id="workPeriodContainer" class="flex h-12 sm:h-full rounded-2xl overflow-hidden w-full sm:w-auto sm:flex-1">
+                <div id="actualWorkBar" class="time-period-bar productive-work-period justify-center px-2 sm:px-4">
+                    <span id="actualWorkLabel"></span>
+                </div>
+                <div id="otherWorkBar" class="time-period-bar non-productive-work-period justify-center px-2 sm:px-4">
+                    <span id="otherWorkLabel"></span>
+                </div>
+            </div>
+            <div id="retirementPeriodBar" class="time-period-bar retirement-period justify-center px-2 sm:px-4 h-12 sm:h-full rounded-2xl w-full sm:w-auto sm:flex-1">
+                <span id="retirementPeriodLabel"></span>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-4">
+            <div class="legend-item w-full sm:w-auto justify-center">
+                <span class="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-r from-red-600 to-red-500 mr-2 sm:mr-3"></span>
+                <span class="text-white text-sm sm:text-base font-medium">實際工作期</span>
+            </div>
+            <div class="legend-item w-full sm:w-auto justify-center">
+                <span class="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 mr-2 sm:mr-3"></span>
+                <span class="text-white text-sm sm:text-base font-medium">工作期內其他時間</span>
+            </div>
+            <div class="legend-item w-full sm:w-auto justify-center">
+                <span class="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-400 mr-2 sm:mr-3"></span>
+                <span class="text-white text-sm sm:text-base font-medium">退休期</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <p id="workPeriodExplanation" class="text-gray-700 leading-relaxed text-sm sm:text-base text-center"></p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row justify-between w-full max-w-2xl mx-auto space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6">
+        <button id="backToLifespanBtn" class="btn-secondary flex-1 text-white py-3 md:py-4 rounded-2xl text-base sm:text-lg font-semibold">← 上一步</button>
+        <button id="savePdfBtn" class="btn-primary flex-1 text-white py-3 md:py-4 rounded-2xl text-base sm:text-lg font-semibold">儲存為 PDF 📄</button>
+        <button id="startOverBtn" class="btn-danger flex-1 text-white py-3 md:py-4 rounded-2xl text-base sm:text-lg font-semibold">重新開始</button>
+    </div>
+</div>
+
     <script>
-// 獲取 DOM 元素的引用
-const savePdfBtn = document.getElementById('savePdfBtn');
-const namePage = document.getElementById('namePage');
-const agePage = document.getElementById('agePage');
-const retirementAgePage = document.getElementById('retirementAgePage');
-const lifespanPage = document.getElementById('lifespanPage');
-const summaryPage = document.getElementById('summaryPage');
+        /* JavaScript 保持原樣，無需修改 RWD */
+        // 獲取 DOM 元素的引用
+        const savePdfBtn = document.getElementById('savePdfBtn');
+        const namePage = document.getElementById('namePage');
+        const agePage = document.getElementById('agePage');
+        const retirementAgePage = document.getElementById('retirementAgePage');
+        const lifespanPage = document.getElementById('lifespanPage');
+        const summaryPage = document.getElementById('summaryPage');
+        const nameInput = document.getElementById('nameInput');
+        const submitNameBtn = document.getElementById('submitNameBtn');
+        const displayNameAgePage = document.getElementById('displayNameAgePage');
+        const ageInput = document.getElementById('ageInput');
+        const ageScaleContainer = document.getElementById('ageScaleContainer');
+        const backToNameBtn = document.getElementById('backToNameBtn');
+        const goToRetirementBtn = document.getElementById('goToRetirementBtn');
+        const displayNameRetirementPage = document.getElementById('displayNameRetirementPage');
+        const retirementAgeInput = document.getElementById('retirementAgeInput');
+        const backToAgeBtn = document.getElementById('backToAgeBtn');
+        const goToLifespanBtn = document.getElementById('goToLifespanBtn');
+        const displayNameLifespanPage = document.getElementById('displayNameLifespanPage');
+        const lifespanInput = document.getElementById('lifespanInput');
+        const backToRetirementBtn = document.getElementById('backToRetirementBtn');
+        const goToSummaryBtn = document.getElementById('goToSummaryBtn');
+        const displayNameSummaryPage = document.getElementById('displayNameSummaryPage');
+        const summaryCurrentAge = document.getElementById('summaryCurrentAge');
+        const summaryRetirementAge = document.getElementById('summaryRetirementAge');
+        const summaryLifespan = document.getElementById('summaryLifespan');
+        const workPeriodContainer = document.getElementById('workPeriodContainer');
+        const actualWorkBar = document.getElementById('actualWorkBar');
+        const otherWorkBar = document.getElementById('otherWorkBar');
+        const retirementPeriodBar = document.getElementById('retirementPeriodBar');
+        const actualWorkLabel = document.getElementById('actualWorkLabel');
+        const otherWorkLabel = document.getElementById('otherWorkLabel');
+        const retirementPeriodLabel = document.getElementById('retirementPeriodLabel');
+        const workPeriodExplanation = document.getElementById('workPeriodExplanation');
+        const backToLifespanBtn = document.getElementById('backToLifespanBtn');
+        const startOverBtn = document.getElementById('startOverBtn');
 
-const nameInput = document.getElementById('nameInput');
-const submitNameBtn = document.getElementById('submitNameBtn');
+        let userName = '';
+        let currentAge = 0;
+        let retirementAge = 0;
+        let lifespan = 0;
 
-const displayNameAgePage = document.getElementById('displayNameAgePage');
-const ageInput = document.getElementById('ageInput');
-const ageScaleContainer = document.getElementById('ageScaleContainer');
-const backToNameBtn = document.getElementById('backToNameBtn');
-const goToRetirementBtn = document.getElementById('goToRetirementBtn');
-
-const displayNameRetirementPage = document.getElementById('displayNameRetirementPage');
-const retirementAgeInput = document.getElementById('retirementAgeInput');
-const backToAgeBtn = document.getElementById('backToAgeBtn');
-const goToLifespanBtn = document.getElementById('goToLifespanBtn');
-
-const displayNameLifespanPage = document.getElementById('displayNameLifespanPage');
-const lifespanInput = document.getElementById('lifespanInput');
-const backToRetirementBtn = document.getElementById('backToRetirementBtn');
-const goToSummaryBtn = document.getElementById('goToSummaryBtn');
-
-const displayNameSummaryPage = document.getElementById('displayNameSummaryPage');
-const summaryCurrentAge = document.getElementById('summaryCurrentAge');
-const summaryRetirementAge = document.getElementById('summaryRetirementAge');
-const summaryLifespan = document.getElementById('summaryLifespan');
-
-const workPeriodContainer = document.getElementById('workPeriodContainer');
-const actualWorkBar = document.getElementById('actualWorkBar');
-const otherWorkBar = document.getElementById('otherWorkBar');
-const retirementPeriodBar = document.getElementById('retirementPeriodBar');
-
-const actualWorkLabel = document.getElementById('actualWorkLabel');
-const otherWorkLabel = document.getElementById('otherWorkLabel');
-const retirementPeriodLabel = document.getElementById('retirementPeriodLabel');
-const workPeriodExplanation = document.getElementById('workPeriodExplanation');
-
-const backToLifespanBtn = document.getElementById('backToLifespanBtn');
-const startOverBtn = document.getElementById('startOverBtn');
-
-let userName = '';
-let currentAge = 0;
-let retirementAge = 0;
-let lifespan = 0;
-
-function showPage(pageId) {
-    // 移除所有頁面的顯示
-    [namePage, agePage, retirementAgePage, lifespanPage, summaryPage].forEach(page => {
-        page.classList.add('hidden');
-        page.classList.remove('page-transition');
-    });
-
-    // 顯示指定頁面並添加動畫
-    const targetPage = document.getElementById(pageId);
-    if (targetPage) {
-        targetPage.classList.remove('hidden');
-        targetPage.classList.add('page-transition');
-
-        if (pageId === 'summaryPage') {
-            renderSummary();
+        function showPage(pageId) {
+            [namePage, agePage, retirementAgePage, lifespanPage, summaryPage].forEach(page => {
+                page.classList.add('hidden');
+                page.classList.remove('page-transition');
+            });
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+                targetPage.classList.add('page-transition');
+                if (pageId === 'summaryPage') renderSummary();
+            }
         }
-    }
-}
 
-function renderAgeScale(age = 0) {
-    ageScaleContainer.innerHTML = '';
-    const containerWidth = ageScaleContainer.offsetWidth;
-
-    for (let i = 0; i <= 100; i++) {
-        const position = (i / 100) * containerWidth;
-        const tick = document.createElement('div');
-        tick.className = 'tick';
-        tick.style.left = `${position}px`;
-
-        if (i === age) {
-            tick.classList.add('highlight-tick');
-        } else if (i % 10 === 0) {
-            tick.classList.add('major-tick');
-        } else if (i % 5 === 0) {
-            tick.classList.add('minor-tick');
-        } else {
-            tick.style.height = '8px';
+        function renderAgeScale(age = 0) {
+            ageScaleContainer.innerHTML = '';
+            const containerWidth = ageScaleContainer.offsetWidth;
+            for (let i = 0; i <= 100; i++) {
+                const position = (i / 100) * containerWidth;
+                const tick = document.createElement('div');
+                tick.className = 'tick';
+                tick.style.left = `${position}px`;
+                if (i === age) tick.classList.add('highlight-tick');
+                else if (i % 10 === 0) tick.classList.add('major-tick');
+                else if (i % 5 === 0) tick.classList.add('minor-tick');
+                else tick.style.height = '8px';
+                ageScaleContainer.appendChild(tick);
+                if (i % 10 === 0) {
+                    const label = document.createElement('div');
+                    label.className = 'tick-label';
+                    label.textContent = i;
+                    label.style.left = `${position}px`;
+                    ageScaleContainer.appendChild(label);
+                }
+            }
         }
-        ageScaleContainer.appendChild(tick);
 
-        if (i % 10 === 0) {
-            const label = document.createElement('div');
-            label.className = 'tick-label';
-            label.textContent = i;
-            label.style.left = `${position}px`;
-            ageScaleContainer.appendChild(label);
+        function renderSummary() {
+            displayNameSummaryPage.textContent = userName;
+            currentAge = parseInt(ageInput.value) || 0;
+            retirementAge = parseInt(retirementAgeInput.value) || 0;
+            lifespan = parseInt(lifespanInput.value) || 0;
+            summaryCurrentAge.textContent = currentAge;
+            summaryRetirementAge.textContent = retirementAge;
+            summaryLifespan.textContent = lifespan;
+            const totalActiveLifeDuration = Math.max(0, lifespan - currentAge);
+            let workDuration = Math.max(0, retirementAge - currentAge);
+            let retirementDuration = Math.max(0, lifespan - retirementAge);
+            if (retirementAge > lifespan) {
+                workDuration = Math.max(0, lifespan - currentAge);
+                retirementDuration = 0;
+            }
+            if (currentAge >= retirementAge) {
+                workDuration = 0;
+                retirementDuration = Math.max(0, lifespan - currentAge);
+            }
+            if (lifespan <= currentAge) {
+                workDuration = 0;
+                retirementDuration = 0;
+            }
+            const actualWorkYears = workDuration / 3;
+            const otherWorkYears = workDuration * 2 / 3;
+            let actualWorkPercentage = 0, otherWorkPercentage = 0, retirementPeriodPercentage = 0;
+            if (totalActiveLifeDuration > 0) {
+                actualWorkPercentage = (actualWorkYears / totalActiveLifeDuration) * 100;
+                otherWorkPercentage = (otherWorkYears / totalActiveLifeDuration) * 100;
+                retirementPeriodPercentage = (retirementDuration / totalActiveLifeDuration) * 100;
+            }
+            const totalPercentage = actualWorkPercentage + otherWorkPercentage + retirementPeriodPercentage;
+            if (totalPercentage > 0) {
+                actualWorkPercentage = (actualWorkPercentage / totalPercentage) * 100;
+                otherWorkPercentage = (otherWorkPercentage / totalPercentage) * 100;
+                retirementPeriodPercentage = (retirementPeriodPercentage / totalPercentage) * 100;
+            }
+            workPeriodContainer.style.width = `${actualWorkPercentage + otherWorkPercentage}%`;
+            actualWorkBar.style.width = `${(actualWorkYears / workDuration) * 100 || 0}%`;
+            otherWorkBar.style.width = `${(otherWorkYears / workDuration) * 100 || 0}%`;
+            retirementPeriodBar.style.width = `${retirementPeriodPercentage}%`;
+            actualWorkLabel.textContent = `實際工作 ${Math.round(actualWorkYears)} 年`;
+            otherWorkLabel.textContent = `其他時間 ${Math.round(otherWorkYears)} 年`;
+            retirementPeriodLabel.textContent = `退休期 ${Math.round(retirementDuration)} 年`;
+            if (actualWorkPercentage < 12 && actualWorkPercentage > 0) actualWorkLabel.textContent = '';
+            if (otherWorkPercentage < 12 && otherWorkPercentage > 0) otherWorkLabel.textContent = '';
+            if (retirementPeriodPercentage < 12 && retirementPeriodPercentage > 0) retirementPeriodLabel.textContent = '';
+            if (lifespan <= currentAge) {
+                workPeriodContainer.style.width = '0%';
+                actualWorkBar.style.width = '0%';
+                otherWorkBar.style.width = '0%';
+                retirementPeriodBar.style.width = '100%';
+                actualWorkLabel.textContent = otherWorkLabel.textContent = '';
+                retirementPeriodLabel.textContent = '生命已結束';
+                retirementPeriodBar.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+            } else if (currentAge >= retirementAge) {
+                workPeriodContainer.style.width = '0%';
+                actualWorkBar.style.width = '0%';
+                otherWorkBar.style.width = '0%';
+                retirementPeriodBar.style.width = '100%';
+                actualWorkLabel.textContent = otherWorkLabel.textContent = '';
+                retirementPeriodLabel.textContent = `退休期 ${Math.round(lifespan - currentAge)} 年`;
+                retirementPeriodBar.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+            } else if (retirementAge >= lifespan) {
+                workPeriodContainer.style.width = '100%';
+                retirementPeriodBar.style.width = '0%';
+                actualWorkBar.style.width = '33.33%';
+                otherWorkBar.style.width = '66.67%';
+                retirementPeriodLabel.textContent = '';
+                retirementPeriodBar.style.background = '';
+            } else {
+                retirementPeriodBar.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+            }
+            const totalNonProductiveYears = Math.round(otherWorkYears + retirementDuration);
+            workPeriodExplanation.textContent = `💡 重要觀察：你的實際工作期 (${Math.round(actualWorkYears)} 年) 需要養活工作期內的其他時間 (${Math.round(otherWorkYears)} 年) 以及退休期 (${Math.round(retirementDuration)} 年)，總共約 ${totalNonProductiveYears} 年。`;
         }
-    }
-}
 
-function renderSummary() {
-    displayNameSummaryPage.textContent = userName;
+        submitNameBtn.addEventListener('click', () => {
+            userName = nameInput.value.trim();
+            if (userName) {
+                displayNameAgePage.textContent = userName;
+                showPage('agePage');
+                renderAgeScale(parseInt(ageInput.value));
+            } else alert('請輸入你的姓名！');
+        });
 
-    currentAge = parseInt(ageInput.value);
-    retirementAge = parseInt(retirementAgeInput.value);
-    lifespan = parseInt(lifespanInput.value);
+        ageInput.addEventListener('input', () => {
+            currentAge = parseInt(ageInput.value) || 0;
+            ageInput.value = currentAge;
+            renderAgeScale(currentAge);
+            retirementAgeInput.min = currentAge;
+            if (parseInt(retirementAgeInput.value) < currentAge) retirementAgeInput.value = currentAge;
+        });
 
-    summaryCurrentAge.textContent = currentAge;
-    summaryRetirementAge.textContent = retirementAge;
-    summaryLifespan.textContent = lifespan;
+        backToNameBtn.addEventListener('click', () => showPage('namePage'));
+        goToRetirementBtn.addEventListener('click', () => {
+            retirementAgeInput.value = Math.max(currentAge, 65);
+            displayNameRetirementPage.textContent = userName;
+            showPage('retirementAgePage');
+        });
 
-    if (isNaN(currentAge)) currentAge = 0;
-    if (isNaN(retirementAge)) retirementAge = 0;
-    if (isNaN(lifespan)) lifespan = 0;
+        retirementAgeInput.addEventListener('input', () => {
+            retirementAge = parseInt(retirementAgeInput.value) || currentAge;
+            retirementAgeInput.value = retirementAge;
+            lifespanInput.min = retirementAge;
+            if (parseInt(lifespanInput.value) < retirementAge) lifespanInput.value = retirementAge;
+        });
 
-    const totalActiveLifeDuration = Math.max(0, lifespan - currentAge);
+        backToAgeBtn.addEventListener('click', () => showPage('agePage'));
+        goToLifespanBtn.addEventListener('click', () => {
+            displayNameLifespanPage.textContent = userName;
+            showPage('lifespanPage');
+        });
 
-    let workDuration = Math.max(0, retirementAge - currentAge);
-    let retirementDuration = Math.max(0, lifespan - retirementAge);
+        lifespanInput.addEventListener('input', () => {
+            lifespan = parseInt(lifespanInput.value) || retirementAge;
+            lifespanInput.value = lifespan;
+        });
 
-    if (retirementAge > lifespan) {
-        workDuration = Math.max(0, lifespan - currentAge);
-        retirementDuration = 0;
-    }
-    if (currentAge >= retirementAge) {
-        workDuration = 0;
-        retirementDuration = Math.max(0, lifespan - currentAge);
-    }
-    if (lifespan <= currentAge) {
-        workDuration = 0;
-        retirementDuration = 0;
-    }
-
-    const actualWorkYears = workDuration / 3;
-    const otherWorkYears = workDuration * 2 / 3;
-
-    let actualWorkPercentage = 0;
-    let otherWorkPercentage = 0;
-    let retirementPeriodPercentage = 0;
-
-    if (totalActiveLifeDuration > 0) {
-        actualWorkPercentage = (actualWorkYears / totalActiveLifeDuration) * 100;
-        otherWorkPercentage = (otherWorkYears / totalActiveLifeDuration) * 100;
-        retirementPeriodPercentage = (retirementDuration / totalActiveLifeDuration) * 100;
-    }
-
-    // 確保百分比不會超過100，且合計為100
-    const totalPercentage = actualWorkPercentage + otherWorkPercentage + retirementPeriodPercentage;
-    if (totalPercentage > 0) {
-        actualWorkPercentage = (actualWorkPercentage / totalPercentage) * 100;
-        otherWorkPercentage = (otherWorkPercentage / totalPercentage) * 100;
-        retirementPeriodPercentage = (retirementPeriodPercentage / totalPercentage) * 100;
-    }
-
-
-    workPeriodContainer.style.width = `${actualWorkPercentage + otherWorkPercentage}%`;
-    actualWorkBar.style.width = `${(actualWorkYears / workDuration) * 100 || 0}%`;
-    otherWorkBar.style.width = `${(otherWorkYears / workDuration) * 100 || 0}%`;
-    retirementPeriodBar.style.width = `${retirementPeriodPercentage}%`;
-
-    actualWorkLabel.textContent = `實際工作 ${Math.round(actualWorkYears)} 年`;
-    otherWorkLabel.textContent = `其他時間 ${Math.round(otherWorkYears)} 年`;
-    retirementPeriodLabel.textContent = `退休期 ${Math.round(retirementDuration)} 年`;
-
-    // 調整標籤顯示邏輯，避免過短的條狀圖顯示文字
-    if (actualWorkPercentage < 12 && actualWorkPercentage > 0) {
-        actualWorkLabel.textContent = '';
-    }
-    if (otherWorkPercentage < 12 && otherWorkPercentage > 0) {
-        otherWorkLabel.textContent = '';
-    }
-    if (retirementPeriodPercentage < 12 && retirementPeriodPercentage > 0) {
-        retirementPeriodLabel.textContent = '';
-    }
-
-    // 特殊情況處理
-    if (lifespan <= currentAge) {
-        workPeriodContainer.style.width = '0%';
-        actualWorkBar.style.width = '0%';
-        otherWorkBar.style.width = '0%';
-        retirementPeriodBar.style.width = '100%';
-        actualWorkLabel.textContent = '';
-        otherWorkLabel.textContent = '';
-        retirementPeriodLabel.textContent = '生命已結束';
-        retirementPeriodBar.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
-    } else if (currentAge >= retirementAge) {
-        workPeriodContainer.style.width = '0%';
-        actualWorkBar.style.width = '0%';
-        otherWorkBar.style.width = '0%';
-        retirementPeriodBar.style.width = '100%';
-        actualWorkLabel.textContent = '';
-        otherWorkLabel.textContent = '';
-        retirementPeriodLabel.textContent = `退休期 ${Math.round(lifespan - currentAge)} 年`;
-        retirementPeriodBar.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)'; // Reset background if it was changed
-    } else if (retirementAge >= lifespan) {
-        workPeriodContainer.style.width = '100%';
-        retirementPeriodBar.style.width = '0%';
-        actualWorkBar.style.width = '33.33%';
-        otherWorkBar.style.width = '66.67%';
-        actualWorkLabel.textContent = `實際工作 ${Math.round(actualWorkYears)} 年`;
-        otherWorkLabel.textContent = `其他時間 ${Math.round(otherWorkYears)} 年`;
-        retirementPeriodLabel.textContent = '';
-        retirementPeriodBar.style.background = ''; // Reset background if it was changed
-    } else {
-        // Reset to default if none of the special conditions apply
-        retirementPeriodBar.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-    }
-
-
-    const totalNonProductiveYears = Math.round(otherWorkYears + retirementDuration);
-    workPeriodExplanation.textContent = `💡 重要觀察：你的實際工作期 (${Math.round(actualWorkYears)} 年) 需要養活工作期內的其他時間 (${Math.round(otherWorkYears)} 年) 以及退休期 (${Math.round(retirementDuration)} 年)，總共約 ${totalNonProductiveYears} 年。`;
-}
-
-// 事件監聽器
-submitNameBtn.addEventListener('click', () => {
-    userName = nameInput.value.trim();
-    if (userName) {
-        displayNameAgePage.textContent = userName;
-        showPage('agePage');
-        renderAgeScale(parseInt(ageInput.value)); // 初始渲染年齡刻度
-    } else {
-        alert('請輸入你的姓名！');
-    }
-});
-
-ageInput.addEventListener('input', () => {
-    currentAge = parseInt(ageInput.value);
-    if (isNaN(currentAge) || currentAge < 0) {
-        currentAge = 0;
-    }
-    ageInput.value = currentAge; // 確保輸入框顯示有效值
-    renderAgeScale(currentAge);
-
-    // 更新退休年齡的最小值
-    retirementAgeInput.min = currentAge;
-    // 如果退休年齡小於當前年齡，則將退休年齡設置為當前年齡
-    if (parseInt(retirementAgeInput.value) < currentAge) {
-        retirementAgeInput.value = currentAge;
-    }
-});
-
-backToNameBtn.addEventListener('click', () => {
-    showPage('namePage');
-});
-
-goToRetirementBtn.addEventListener('click', () => {
-    retirementAgeInput.value = Math.max(currentAge, 65); // 預設退休年齡不小於當前年齡
-    displayNameRetirementPage.textContent = userName;
-    showPage('retirementAgePage');
-});
-
-retirementAgeInput.addEventListener('input', () => {
-    retirementAge = parseInt(retirementAgeInput.value);
-    if (isNaN(retirementAge) || retirementAge < currentAge) {
-        retirementAge = currentAge; // 退休年齡不能小於當前年齡
-    }
-    retirementAgeInput.value = retirementAge; // 確保輸入框顯示有效值
-
-    // 更新預計壽命的最小值
-    lifespanInput.min = retirementAge;
-    // 如果預計壽命小於退休年齡，則將預計壽命設置為退休年齡
-    if (parseInt(lifespanInput.value) < retirementAge) {
-        lifespanInput.value = retirementAge;
-    }
-});
-
-backToAgeBtn.addEventListener('click', () => {
-    showPage('agePage');
-});
-
-goToLifespanBtn.addEventListener('click', () => {
-    displayNameLifespanPage.textContent = userName;
-    showPage('lifespanPage');
-});
-
-lifespanInput.addEventListener('input', () => {
-    lifespan = parseInt(lifespanInput.value);
-    if (isNaN(lifespan) || lifespan < retirementAge) {
-        lifespan = retirementAge; // 預計壽命不能小於退休年齡
-    }
-    lifespanInput.value = lifespan; // 確保輸入框顯示有效值
-});
-
-backToRetirementBtn.addEventListener('click', () => {
-    showPage('retirementAgePage');
-});
-
-goToSummaryBtn.addEventListener('click', () => {
-    showPage('summaryPage');
-});
-
-backToLifespanBtn.addEventListener('click', () => {
-    showPage('lifespanPage'); // Corrected to go to the lifespan page
-});
-
-startOverBtn.addEventListener('click', () => {
-    // 重置所有輸入和狀態
-    userName = '';
-    currentAge = 0;
-    retirementAge = 0;
-    lifespan = 0;
-    nameInput.value = '';
-    ageInput.value = '0';
-    retirementAgeInput.value = '65';
-    lifespanInput.value = '80';
-    renderAgeScale(0); // 重置年齡刻度
-    showPage('namePage');
-});
-
-// 初始渲染年齡刻度 (確保頁面載入時正確顯示)
-document.addEventListener('DOMContentLoaded', () => {
-    renderAgeScale(parseInt(ageInput.value));
-});
-// 在所有其他事件監聽器之後加入
-savePdfBtn.addEventListener('click', () => {
-    window.print(); // 依然是呼叫 window.print()
-});
-   </script>
+        backToRetirementBtn.addEventListener('click', () => showPage('retirementAgePage'));
+        goToSummaryBtn.addEventListener('click', () => showPage('summaryPage'));
+        backToLifespanBtn.addEventListener('click', () => showPage('lifespanPage'));
+        startOverBtn.addEventListener('click', () => {
+            userName = '';
+            currentAge = retirementAge = lifespan = 0;
+            nameInput.value = '';
+            ageInput.value = '0';
+            retirementAgeInput.value = '65';
+            lifespanInput.value = '80';
+            renderAgeScale(0);
+            showPage('namePage');
+        });
+        document.addEventListener('DOMContentLoaded', () => renderAgeScale(parseInt(ageInput.value)));
+        savePdfBtn.addEventListener('click', () => window.print());
+    </script>
 </body>
 </html>
